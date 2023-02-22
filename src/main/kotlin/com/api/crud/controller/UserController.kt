@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/user")
-class UserController {
+class UserController(var userService: UserService) {
 
     @GetMapping("/listAllUsers")
-    fun listAllUsers(userService: UserService): ResponseEntity<MutableList<UserEntity>> {
+    fun listAllUsers(): ResponseEntity<MutableList<UserEntity>> {
         return ResponseEntity.ok(userService.listAllUsers())
     }
 }
