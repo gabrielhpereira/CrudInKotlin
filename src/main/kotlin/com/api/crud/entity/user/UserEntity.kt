@@ -1,4 +1,4 @@
-package com.api.crud.entity
+package com.api.crud.entity.user
 
 import jakarta.persistence.*
 
@@ -9,12 +9,12 @@ data class UserEntity(
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Int,
+    val id: Int,
 
     @Column
-    var name: String,
+    val name: String,
 
     @Column
-    var email: String
+    val email: String
 ) {
 }
