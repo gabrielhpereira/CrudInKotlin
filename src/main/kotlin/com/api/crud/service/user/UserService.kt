@@ -17,4 +17,6 @@ class UserService(var userRepository: UserRepository) {
             userDto.email
         ))
     }
+
+    fun deleteUser(id: Int){ this.userRepository.deleteById(id) }
 }
