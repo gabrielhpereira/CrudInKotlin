@@ -17,7 +17,7 @@ interface UserRepository : JpaRepository<UserEntity, Int>{
             + "     AND :email IS NULL OR u.email LIKE :email")
     fun listUsersByFilters(
         @Param("id") id: Int,
-        @Param("name") name: String,
-        @Param("email") email: String
+        @Param("name") name: String?,
+        @Param("email") email: String?
     ) : List<UserVo>
 }

@@ -10,11 +10,13 @@ import org.springframework.stereotype.Service
 @Service
 class UserService(var userRepository: UserRepository) {
 
+    fun checkStringEmpty(valor: String) = valor.isEmpty()
+
     fun listUsersByFilters(userDto: UserDto) : List<UserVo> {
         return this.userRepository.listUsersByFilters(
             userDto.id,
-            userDto.name,
-            userDto.email
+            if (checkStringEmpty(userDto.name)) null else "%" + userDto.name.uppercase().trim() + "%",
+            if (checkStringEmpty(userDto.email)) null else "%" + userDto.email.trim() + "%"
         );
     }
 

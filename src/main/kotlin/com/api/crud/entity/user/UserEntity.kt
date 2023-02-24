@@ -12,9 +12,9 @@ data class UserEntity(
     val id: Int,
 
     @Column
-    val name: String,
+    val name: String?,
 
     @Column
-    val email: String
+    val email: String?
 ) {
 }
