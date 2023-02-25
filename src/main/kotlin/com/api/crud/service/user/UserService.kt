@@ -17,7 +17,7 @@ class UserService(var userRepository: UserRepository) {
             userDto.id,
             if (checkStringEmpty(userDto.name)) null else "%" + userDto.name.uppercase().trim() + "%",
             if (checkStringEmpty(userDto.email)) null else "%" + userDto.email.trim() + "%"
-        );
+        )
     }
 
     fun listAllUsers(): MutableList<UserEntity> { return this.userRepository.findAll() }
