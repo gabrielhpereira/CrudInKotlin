@@ -12,18 +12,8 @@ import java.math.BigInteger
 @Entity
 @Table
 data class ProductEntity(
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    val id: BigInteger,
-
-    @Column
-    val name: String,
-
-    @Column
-    val price: BigDecimal,
-
-    @Column
-    val amount: Int
-) {
-}
+    @Id @Column @GeneratedValue(strategy = GenerationType.AUTO) val id: BigInteger,
+    @Column val name: String,
+    @Column val price: BigDecimal,
+    @Column val amount: Int
+) {}

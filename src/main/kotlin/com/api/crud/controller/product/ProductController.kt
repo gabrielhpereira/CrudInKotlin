@@ -2,7 +2,9 @@ package com.api.crud.controller.product
 
 import com.api.crud.entity.product.ProductEntity
 import com.api.crud.entity.product.dto.ProductDto
+import com.api.crud.entity.product.vo.ProductVo
 import com.api.crud.service.product.ProductService
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,20 +17,20 @@ import java.math.BigInteger
 
 @RestController
 @RequestMapping("/product")
-class ProductController(val productService: ProductService){
+class ProductController(val productService: ProductService) {
+
+    @PostMapping("/listProductsByFilters")
+    fun listUsersByFilters(@RequestBody productDto: ProductDto): ResponseEntity<List<ProductVo>> =
+        ResponseEntity.ok(this.productService.listProductsByFilters(productDto))
 
     @GetMapping("/listAllProducts")
-    fun listAllUsers(): ResponseEntity<List<ProductEntity>>{
-        return ResponseEntity.ok(this.productService.listAllProducts())
-    }
+    fun listAllUsers(): ResponseEntity<List<ProductVo>> = ResponseEntity.ok(this.productService.listAllProducts())
 
     @PostMapping("/saveProduct")
-    fun saveProduct(@RequestBody productDto: ProductDto): ResponseEntity<Unit> {
-        return ResponseEntity.ok(this.productService.saveProduct(productDto))
-    }
+    fun saveProduct(@RequestBody productDto: ProductDto): ResponseEntity<Unit> =
+        ResponseEntity.ok(this.productService.saveProduct(productDto))
 
     @DeleteMapping("deleteProduct/{id}")
-    fun deleteProduct(@PathVariable id: BigInteger) : ResponseEntity<Unit>{
-        return ResponseEntity.ok(this.productService.deleteProduct(id))
-    }
+    fun deleteProduct(@PathVariable id: BigInteger): ResponseEntity<Unit> =
+        ResponseEntity.ok(this.productService.deleteProduct(id))
 }

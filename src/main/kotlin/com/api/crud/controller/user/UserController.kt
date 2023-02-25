@@ -10,25 +10,18 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/user")
-class UserController(var userService: UserService) {
+class UserController(val userService: UserService) {
 
     @PostMapping("listUsersByFilters")
-    fun listUsersByFilters(@RequestBody userDto: UserDto) : ResponseEntity<List<UserVo>> {
-        return ResponseEntity.ok(this.userService.listUsersByFilters(userDto))
-    }
+    fun listUsersByFilters(@RequestBody userDto: UserDto): ResponseEntity<List<UserVo>> =
+        ResponseEntity.ok(this.userService.listUsersByFilters(userDto))
 
     @GetMapping("/listAllUsers")
-    fun listAllUsers(): ResponseEntity<MutableList<UserEntity>> {
-        return ResponseEntity.ok(userService.listAllUsers())
-    }
+    fun listAllUsers(): ResponseEntity<MutableList<UserEntity>> = ResponseEntity.ok(userService.listAllUsers())
 
     @PostMapping("/saveUser")
-    fun saveUser(@RequestBody userDto: UserDto): ResponseEntity<Unit> {
-        return ResponseEntity.ok(userService.saveUser(userDto))
-    }
+    fun saveUser(@RequestBody userDto: UserDto): ResponseEntity<UserEntity> = ResponseEntity.ok(userService.saveUser(userDto))
 
     @DeleteMapping("/deleteUser/{id}")
-    fun deleteUser(@PathVariable id: Int): ResponseEntity<out Any> {
-        return ResponseEntity.ok(userService.deleteUser(id))
-    }
+    fun deleteUser(@PathVariable id: Int): ResponseEntity<out Any> = ResponseEntity.ok(userService.deleteUser(id))
 }

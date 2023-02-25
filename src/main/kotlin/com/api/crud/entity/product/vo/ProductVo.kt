@@ -1,9 +1,9 @@
-package com.api.crud.entity.product.dto
+package com.api.crud.entity.product.vo
 
 import java.math.BigDecimal
 import java.math.BigInteger
 
-data class ProductDto(
+data class ProductVo(
     val id: BigInteger,
     val name: String,
     val price: BigDecimal,
