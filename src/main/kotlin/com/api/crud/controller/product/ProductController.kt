@@ -27,7 +27,7 @@ class ProductController(val productService: ProductService) {
     fun listAllUsers(): ResponseEntity<List<ProductVo>> = ResponseEntity.ok(this.productService.listAllProducts())
 
     @PostMapping("/saveProduct")
-    fun saveProduct(@RequestBody productDto: ProductDto): ResponseEntity<Unit> =
+    fun saveProduct(@RequestBody productDto: ProductDto): ResponseEntity<ProductEntity> =
         ResponseEntity.ok(this.productService.saveProduct(productDto))
 
     @DeleteMapping("deleteProduct/{id}")

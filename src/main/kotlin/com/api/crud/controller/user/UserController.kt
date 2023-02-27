@@ -23,5 +23,5 @@ class UserController(val userService: UserService) {
     fun saveUser(@RequestBody userDto: UserDto): ResponseEntity<UserEntity> = ResponseEntity.ok(userService.saveUser(userDto))
 
     @DeleteMapping("/deleteUser/{id}")
-    fun deleteUser(@PathVariable id: Int): ResponseEntity<out Any> = ResponseEntity.ok(userService.deleteUser(id))
+    fun deleteUser(@PathVariable id: Int): ResponseEntity<Unit> = ResponseEntity.ok(userService.deleteUser(id))
 }
