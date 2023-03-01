@@ -1,4 +1,4 @@
-package com.api.crud.entity.product
+package com.api.crud.entity.product.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

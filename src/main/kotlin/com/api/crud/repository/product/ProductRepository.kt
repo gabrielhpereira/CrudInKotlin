@@ -1,6 +1,6 @@
 package com.api.crud.repository.product
 
-import com.api.crud.entity.product.ProductEntity
+import com.api.crud.entity.product.entity.ProductEntity
 import com.api.crud.entity.product.vo.ProductVo
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

@@ -1,6 +1,6 @@
 package com.api.crud.service.product
 
-import com.api.crud.entity.product.ProductEntity
+import com.api.crud.entity.product.entity.ProductEntity
 import com.api.crud.entity.product.dto.ProductDto
 import com.api.crud.entity.product.vo.ProductVo
 import com.api.crud.repository.product.ProductRepository

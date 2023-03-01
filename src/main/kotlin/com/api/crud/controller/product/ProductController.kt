@@ -1,10 +1,9 @@
 package com.api.crud.controller.product
 
-import com.api.crud.entity.product.ProductEntity
+import com.api.crud.entity.product.entity.ProductEntity
 import com.api.crud.entity.product.dto.ProductDto
 import com.api.crud.entity.product.vo.ProductVo
 import com.api.crud.service.product.ProductService
-import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
