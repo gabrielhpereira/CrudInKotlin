@@ -1,4 +1,4 @@
-package com.api.crud.entity.user
+package com.api.crud.entity.user.entity
 
 import jakarta.persistence.*
 

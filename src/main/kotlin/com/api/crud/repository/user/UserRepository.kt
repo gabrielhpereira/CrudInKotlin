@@ -1,6 +1,6 @@
 package com.api.crud.repository.user
 
-import com.api.crud.entity.user.UserEntity
+import com.api.crud.entity.user.entity.UserEntity
 import com.api.crud.entity.user.vo.UserVo
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

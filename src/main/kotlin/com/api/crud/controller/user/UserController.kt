@@ -1,10 +1,9 @@
 package com.api.crud.controller.user
 
-import com.api.crud.entity.user.UserEntity
+import com.api.crud.entity.user.entity.UserEntity
 import com.api.crud.entity.user.dto.UserDto
 import com.api.crud.entity.user.vo.UserVo
 import com.api.crud.service.user.UserService
-import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 

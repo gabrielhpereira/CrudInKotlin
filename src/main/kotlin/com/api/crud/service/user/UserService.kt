@@ -1,10 +1,9 @@
 package com.api.crud.service.user
 
-import com.api.crud.entity.user.UserEntity
+import com.api.crud.entity.user.entity.UserEntity
 import com.api.crud.entity.user.dto.UserDto
 import com.api.crud.entity.user.vo.UserVo
 import com.api.crud.repository.user.UserRepository
-import org.apache.catalina.User
 import org.springframework.stereotype.Service
 
 @Service
