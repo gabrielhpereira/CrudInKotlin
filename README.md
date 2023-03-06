@@ -1,7 +1,7 @@
 # Api de cadastro.
 
 ## Funcionalidades:
-   Login
+   Login.
    Cadatro de produtos.
    Cadastro de funcionarios.
    Cadastro de usuarios.
